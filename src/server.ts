@@ -13,7 +13,7 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
   app.use(bodyParser.json());
 
   app.get("/filteredimage", (req, res) => {
-    const { image_url } = req.query;
+    const { image_url }: { image_url: string } = req.query;
 
     if (!image_url) {
       return res.status(401).send("You must provide an URL");
